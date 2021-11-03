@@ -1,2 +1,53 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+
+
+.center{
+	text-align: center;
+	padding-top: 60px;
+}
+
+.jumbotran{
+	background-image: url(picture.jpg);
+	background-size: cover;
+	height: 300px;
+}
+
+.pricing-header{
+	margin-top: 50px;
+}
+
+#logo {
+	float: left;
+	font-size : 1.7em;
+	color: #000000;
+	text_transform: uppercase;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+
+#logo:hover {
+	float: left;
+	font-size : 1.9em;
+	color: royalblue;
+	text_transform: uppercase;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+
+
+.jumbotran h1,h2 {
+	color: black;
+	text-align: center;
+	margin-bottom: 30px;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+
+.btn-xlarge{
+	background-color: white;
+	color: black;
+}
+
+.btn-xlarge:hover{
+	background-color: yellowgreen;
+	color: white;
+}
