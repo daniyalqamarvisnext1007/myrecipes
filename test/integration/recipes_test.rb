@@ -48,7 +48,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_match name_of_recipe.capitalize, response.body
     assert_match email_of_recipe, response.body
-
+ 
   end
 
 
