@@ -33,6 +33,7 @@ class RecipesTest < ActionDispatch::IntegrationTest
   #   assert_match @recipe.name, response.body
   #   assert_match @recipe.email, response.body
   #   assert_match @chef.chefname, response.body
+  #   assert_select 'a[href=?]', edit_recipe_path(@recipe), text: "Edit this Recipe"
 
   # end
 
