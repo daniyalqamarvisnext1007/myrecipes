@@ -1,0 +1,35 @@
+<%= render 'shared/page_title', title: "Showing All Chefs" %>
+
+
+<div align="center">
+	<%= will_paginate %>
+</div>
+
+
+<% @chefs.each do |chef| %>
+	<div class="row">
+		<div class="col-md-2">
+			<section class="chef_info center">	
+				<%= gravatar_for(chef, size: 120) %>
+			</section>
+		</div>
+	</div>
+
+
+	<div class="col-md-8 well">
+		<h4><%= link_to chef.chefname, chef_path(chef) %></h4>
+		<p><%= chef.email %></p>
+		<p>
+			<span class="quite">
+				<small><%= time_ago_in_words(chef.created_at) %></small>
+			</span>
+		</p>
+	</div>
+
+	
+<% end %>
+
+
+<div align="center">
+	<%= will_paginate %>
+</div>
