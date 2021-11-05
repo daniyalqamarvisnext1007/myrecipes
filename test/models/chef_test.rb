@@ -4,7 +4,8 @@ class ChefTest < ActiveSupport::TestCase
 
 
 	def setup
-		@chef = Chef.new(chefname: "Daniyal", email: "daniyal@visnext.com")
+		@chef = Chef.new(chefname: "Daniyal", email: "daniyal@visnext.com",
+			password: "password123", password_confirmation: "password123")
 	end
 
 	test "should be valid" do
@@ -40,8 +41,6 @@ class ChefTest < ActiveSupport::TestCase
 		end 
 	end
 
-
-
 	test "email should reject invalid addresses" do
 		valid_emails = %w[user@example daniyalqamar@gmail,com]
 		valid_emails.each do |invalids|
@@ -49,7 +48,6 @@ class ChefTest < ActiveSupport::TestCase
 			assert_not @chef.valid?, "#{invalids.inspect} should be invalid"
 		end 
 	end
-
 
 	test "email should be unique" do
 		duplicate_chef = @chef.dup
@@ -64,6 +62,12 @@ class ChefTest < ActiveSupport::TestCase
 		@chef.save
 		assert_equal mixed_email.downcase, @chef.reload.email
 	end
+
+	test "password should be present" do
+		@chef.password = @chef.password_confirmation = " "
+		assert_not @chef.valid?
+	end
+
 
 
 end
